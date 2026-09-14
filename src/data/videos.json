@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cat-1",
+    "title": "VIDEO SLIDE CƯỚI",
+    "badge": "HOT",
+    "videos": [
+      {
+        "id": "v-1789407016653",
+        "title": "Mẫu 01",
+        "youtubeId": "-RB0ngrXJMc",
+        "duration": "0:45",
+        "hot": true
+      }
+    ]
+  },
+  {
+    "id": "cat-2",
+    "title": "LED SÂN KHẤU",
+    "badge": "BÁN CHẠY",
+    "videos": [
+      {
+        "id": "v-2-1",
+        "title": "Demo 1: Video Loop Màn LED Hoa Hồng Bay 4K",
+        "youtubeId": "kffacxfA7G4",
+        "duration": "0:30 (Loop)",
+        "hot": true
+      },
+      {
+        "id": "v-2-2",
+        "title": "Demo 2: Màn LED Lễ Đường 3D Lãng Mạn 4K",
+        "youtubeId": "y6120QOlsfU",
+        "duration": "0:40"
+      },
+      {
+        "id": "v-2-3",
+        "title": "Demo 3: Background Loop LED Sân Khấu Tiệc Cưới",
+        "youtubeId": "fJ9rUzIMcZQ",
+        "duration": "0:35"
+      }
+    ]
+  }
+]

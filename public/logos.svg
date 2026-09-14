@@ -1,0 +1,23 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8a7a" />
+      <stop offset="50%" stop-color="#ff6f91" />
+      <stop offset="100%" stop-color="#f11c65" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Box -->
+  <rect width="200" height="200" rx="44" fill="url(#logo-gradient)" />
+
+  <!-- White Monogram SL Shape -->
+  <g fill="white">
+    <!-- Top curve of S -->
+    <path d="M50 72 C 50 50, 125 45, 125 70 C 125 90, 85 92, 70 102 C 52 115, 48 135, 75 145 C 98 152, 142 138, 142 138 C 142 138, 130 152, 102 154 C 65 156, 45 136, 52 114 C 58 97, 85 88, 98 80 C 112 70, 105 58, 80 60 C 58 62, 50 72, 50 72 Z" />
+    <!-- Bottom bar of L -->
+    <path d="M 102 154 H 142 C 142 154, 142 138, 142 138 H 102 V 154 Z" />
+  </g>
+
+  <!-- Heart Icon inside Logo -->
+  <path d="M 100 82 C 92 70, 78 78, 88 92 L 100 104 L 112 92 C 122 78, 108 70, 100 82 Z" fill="#f11c65" />
+</svg>
