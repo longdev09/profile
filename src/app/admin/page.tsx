@@ -272,6 +272,43 @@ export default function AdminPage() {
     }
   };
 
+  const handleDownloadJson = () => {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(categories, null, 2));
+    const downloadAnchor = document.createElement("a");
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "videos.json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+    showToast("📥 Đã tải file videos.json về máy thành công!");
+  };
+
+  const handleCopyJson = () => {
+    navigator.clipboard.writeText(JSON.stringify(categories, null, 2));
+    showToast("📋 Đã copy dữ liệu JSON vào Clipboard!");
+  };
+
+  const handleImportJsonFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      try {
+        const parsed = JSON.parse(event.target?.result as string);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setCategories(parsed);
+          await saveCategoriesApi(parsed);
+          showToast("📥 Đã nhập và cập nhật dữ liệu từ file JSON!");
+        } else {
+          alert("File JSON không đúng cấu trúc danh mục!");
+        }
+      } catch (err) {
+        alert("Lỗi đọc file JSON: File không hợp lệ!");
+      }
+    };
+    reader.readAsText(file);
+  };
+
   if (isCheckingAuth) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">
@@ -372,7 +409,7 @@ export default function AdminPage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Link
               href="/"
               target="_blank"
@@ -385,8 +422,29 @@ export default function AdminPage() {
             </Link>
 
             <button
-              onClick={handleResetDefault}
+              onClick={handleDownloadJson}
+              className="px-3 py-2.5 rounded-xl bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/40 text-xs font-bold transition flex items-center gap-1 cursor-pointer"
+              title="Tải file videos.json về máy để cập nhật cố định vào source code"
+            >
+              📥 Tải JSON
+            </button>
+
+            <button
+              onClick={handleCopyJson}
               className="px-3 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-semibold transition cursor-pointer"
+              title="Copy dữ liệu JSON vào bộ nhớ tạm"
+            >
+              📋 Copy JSON
+            </button>
+
+            <label className="px-3 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-semibold transition cursor-pointer flex items-center gap-1">
+              <span>📤 Nhập JSON</span>
+              <input type="file" accept=".json" onChange={handleImportJsonFile} className="hidden" />
+            </label>
+
+            <button
+              onClick={handleResetDefault}
+              className="px-3 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-400 text-xs font-semibold transition cursor-pointer"
               title="Khôi phục dữ liệu ban đầu"
             >
               Mặc Định
@@ -399,6 +457,18 @@ export default function AdminPage() {
             >
               <span>🚪 Đăng Xuất</span>
             </button>
+          </div>
+        </div>
+
+        {/* Thông báo hỗ trợ Vercel Production */}
+        <div className="bg-slate-900/80 border border-pink-500/30 rounded-2xl p-4 text-xs text-slate-300 flex items-start gap-3 shadow-md">
+          <div className="text-xl">⚡</div>
+          <div className="space-y-1">
+            <p className="font-bold text-pink-400">Hướng dẫn lưu vĩnh viễn dữ liệu trên Vercel Production:</p>
+            <p className="text-slate-400 leading-relaxed">
+              Mọi thay đổi khi bấm <strong className="text-white">Lưu Video</strong> sẽ tự động cập nhật ngay trên giao diện web (bộ nhớ tạm serverless & LocalStorage).
+              Để lưu <strong className="text-pink-300">cố định vĩnh viễn</strong> khi Vercel khởi động lại, bạn chỉ cần bấm nút <strong className="text-pink-300">📥 Tải JSON</strong> ở trên và thay thế file <code className="bg-slate-800 px-1.5 py-0.5 rounded text-pink-300">src/data/videos.json</code> trong dự án (hoặc push lên GitHub).
+            </p>
           </div>
         </div>
 
