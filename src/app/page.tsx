@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { fetchCategoriesApi, DEFAULT_CATEGORIES, AccordionCategory } from "@/lib/videoData";
+import { fetchCategoriesApi, DEFAULT_CATEGORIES, AccordionCategory, sortVideosHotFirst } from "@/lib/videoData";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 export default function ProfilePage() {
-  const [openAccordion, setOpenAccordion] = useState<string | null>("cat-1");
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [copiedCode, setCopiedCode] = useState(false);
   const [categories, setCategories] = useState<AccordionCategory[]>(DEFAULT_CATEGORIES);
+  const [activePlayingId, setActivePlayingId] = useState<string | null>(null);
 
   useEffect(() => {
     fetchCategoriesApi().then((data) => {
@@ -40,13 +42,6 @@ export default function ProfilePage() {
             <span className="text-xs font-bold uppercase tracking-wider text-[#f11c65]">Slide Cưới Đẹp</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Link
-              href="/admin"
-              className="px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-900 text-white text-[11px] font-bold flex items-center gap-1 transition shadow-xs"
-              title="Trang quản trị Admin"
-            >
-              <span>⚙️ Admin</span>
-            </Link>
             <button
               onClick={() => {
                 if (navigator.share) {
@@ -69,39 +64,7 @@ export default function ProfilePage() {
         <main className="flex-1 overflow-y-auto px-3 py-3.5 space-y-4 pb-8">
 
           {/* SECTION 1: PROFILE HEADER & BRAND INFO */}
-          <section className="text-center pt-2 space-y-3">
-            {/* Avatar Profile */}
-            <div className="relative inline-block">
-              <div className="w-24 h-24 rounded-3xl p-1 bg-gradient-to-tr from-[#f11c65] via-[#ff6f91] to-[#ff8a7a] shadow-lg shadow-[#f11c65]/30">
-                <div className="w-full h-full rounded-[20px] bg-white overflow-hidden relative flex items-center justify-center">
-                  <Image
-                    src="/logo.png"
-                    alt="Slide Cưới Đẹp Logo"
-                    width={96}
-                    height={96}
-                    className="w-full h-full object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-              <span className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center shadow">
-                <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </span>
-            </div>
-
-            {/* Title & Handles */}
-            <div>
-              <h1 className="text-xl font-extrabold text-[#2d1820] flex items-center justify-center gap-1.5">
-                Slide Cưới Đẹp
-                <span className="text-xs bg-[#f11c65]/10 text-[#f11c65] px-2 py-0.5 rounded-full font-medium border border-[#f11c65]/20">Official</span>
-              </h1>
-              <p className="text-xs text-slate-500 mt-1 max-w-[280px] mx-auto">
-                Chuyên Video Slide Cưới Trend TikTok, Video Cinematic & Màn LED Sân Khấu
-              </p>
-            </div>
-
+          <section className="text-center pt-1 space-y-3">
             {/* Highlight Direct Zalo Contact Banner Button */}
             <div className="pt-2">
               <a
@@ -181,8 +144,8 @@ export default function ProfilePage() {
 
                     {/* Accordion Content Drawer: Direct Video Cards */}
                     {isOpen && (
-                      <div className="p-2 space-y-2 border-t border-pink-100 bg-[#fff7f8]/50">
-                        {cat.videos.map((vid) => (
+                      <div className="p-2 space-y-2 border-t border-pink-100 bg-[#fff7f8]/50 max-h-[460px] sm:max-h-[520px] overflow-y-auto">
+                        {sortVideosHotFirst(cat.videos).map((vid) => (
                           <div
                             key={vid.id}
                             className="p-2.5 bg-white rounded-xl border border-pink-100/90 shadow-2xs space-y-1.5 hover:border-pink-300 transition"
@@ -190,7 +153,13 @@ export default function ProfilePage() {
                             {/* Video Title & Duration Header */}
                             <div className="flex items-center justify-between px-0.5 pt-0.5">
                               <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 truncate pr-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#f11c65] flex-shrink-0" />
+                                {vid.hot ? (
+                                  <span className="text-[10px] bg-red-500 text-white font-extrabold px-1.5 py-0.2 rounded-md flex-shrink-0 animate-pulse">
+                                    🔥 HOT
+                                  </span>
+                                ) : (
+                                  <span className="w-1.5 h-1.5 rounded-full bg-[#f11c65] flex-shrink-0" />
+                                )}
                                 <span className="truncate">{vid.title}</span>
                               </p>
                               {vid.duration && (
@@ -200,28 +169,13 @@ export default function ProfilePage() {
                               )}
                             </div>
 
-                            {/* Embedded Responsive YouTube Player */}
-                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-900 shadow-sm border border-slate-200">
-                              <iframe
-                                className="w-full h-full"
-                                src={`https://www.youtube.com/embed/${vid.youtubeId}?rel=0`}
-                                title={vid.title || "Demo Video"}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                              />
-                            </div>
-
-                            {/* Footer Actions: Chốt Mẫu Này Qua Zalo */}
-                            <div>
-                              <a
-                                href="https://zalo.me/0388520344"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="w-full block text-center py-2 rounded-lg bg-gradient-to-r from-[#f11c65] to-[#ff6f91] hover:from-[#ff6f91] hover:to-[#ff8a7a] text-white text-xs font-extrabold shadow-sm transition active:scale-95"
-                              >
-                                Chốt Mẫu Này Qua Zalo
-                              </a>
-                            </div>
+                            {/* Embedded Responsive YouTube Player with Cover & Play Overlay */}
+                            <YouTubeEmbed
+                              youtubeId={vid.youtubeId}
+                              title={vid.title}
+                              isPlaying={activePlayingId === vid.id}
+                              onPlay={() => setActivePlayingId(vid.id)}
+                            />
                           </div>
                         ))}
                       </div>

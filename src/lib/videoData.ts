@@ -79,6 +79,14 @@ export async function fetchCategoriesApi(): Promise<AccordionCategory[]> {
   return localData.length > 0 ? localData : DEFAULT_CATEGORIES;
 }
 
+export function sortVideosHotFirst(videos: YoutubeVideo[]): YoutubeVideo[] {
+  return [...videos].sort((a, b) => {
+    if (a.hot && !b.hot) return -1;
+    if (!a.hot && b.hot) return 1;
+    return 0;
+  });
+}
+
 export async function saveCategoriesApi(categories: AccordionCategory[]): Promise<boolean> {
   // Save to LocalStorage immediately
   saveCategoriesToLocalStorage(categories);

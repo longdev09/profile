@@ -5,11 +5,39 @@
     "badge": "HOT",
     "videos": [
       {
-        "id": "v-1789407016653",
-        "title": "Mẫu 01",
-        "youtubeId": "-RB0ngrXJMc",
-        "duration": "0:45",
+        "id": "v-1789445716584",
+        "title": "Mẫu SLIDE_02",
+        "youtubeId": "LBeuWnTqt_M",
+        "duration": "5:37",
         "hot": true
+      },
+      {
+        "id": "v-1789445770296",
+        "title": "Mẫu SLIDE_12",
+        "youtubeId": "oOPUXQ2PiUE",
+        "duration": "1:40",
+        "hot": false
+      },
+      {
+        "id": "v-1789445744807",
+        "title": "Mẫu SLIDE_09",
+        "youtubeId": "RhTsj_s-GIA",
+        "duration": "5:02",
+        "hot": false
+      },
+      {
+        "id": "v-1789445736336",
+        "title": "Mẫu SLIDE_06",
+        "youtubeId": "P7GWFhCppdM",
+        "duration": "1:30",
+        "hot": false
+      },
+      {
+        "id": "v-1789445706857",
+        "title": "Mẫu SLIDE_05",
+        "youtubeId": "BbClsav_9G0",
+        "duration": "3:18",
+        "hot": false
       }
     ]
   },
