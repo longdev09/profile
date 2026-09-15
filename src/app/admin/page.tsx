@@ -355,7 +355,7 @@ export default function AdminPage() {
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#f11c65] to-[#ff8a7a] p-0.5 overflow-hidden flex-shrink-0">
               <Image
-                src="/logo.png"
+                src="/icon.svg"
                 alt="Admin Logo"
                 width={48}
                 height={48}

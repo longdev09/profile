@@ -19,6 +19,11 @@ const fontHandwriting = Dancing_Script({
 export const metadata: Metadata = {
   title: "Slide Cưới Đẹp | Video & Thiệp Cưới Online",
   description: "Dịch vụ làm Video Slide Cưới, Màn LED Sân Khấu & Thiệp Cưới Online chuyên nghiệp",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

@@ -38,7 +38,7 @@ export default function ProfilePage() {
         {/* Floating Top Navigation Header */}
         <header className="sticky top-0 z-30 bg-[#fff5f6]/90 backdrop-blur-md px-4 py-3 border-b border-pink-100 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#f11c65] animate-ping" />
+            <Image src="/icon.svg" alt="Slide Cưới Đẹp Logo" width={26} height={26} className="w-6.5 h-6.5 rounded-lg shadow-sm" />
             <span className="text-xs font-bold uppercase tracking-wider text-[#f11c65]">Slide Cưới Đẹp</span>
           </div>
           <div className="flex items-center space-x-2">
