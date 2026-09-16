@@ -5,6 +5,90 @@
     "badge": "HOT",
     "videos": [
       {
+        "id": "v-1789523671420",
+        "title": "Mẫu SLIDE_20",
+        "youtubeId": "pVHxhxg-SrA",
+        "hot": false
+      },
+      {
+        "id": "v-1789523663627",
+        "title": "Mẫu SLIDE_19",
+        "youtubeId": "UlsMj0eAmKA",
+        "hot": false
+      },
+      {
+        "id": "v-1789523630016",
+        "title": "Mẫu SLIDE_0.01",
+        "youtubeId": "35qLCeksx3Q",
+        "hot": false
+      },
+      {
+        "id": "v-1789523621648",
+        "title": "Mẫu SLIDE_1.1",
+        "youtubeId": "ClSr0sD8IZU",
+        "hot": false
+      },
+      {
+        "id": "v-1789523615615",
+        "title": "Demo Video",
+        "youtubeId": "nqIpXVQdruA",
+        "hot": false
+      },
+      {
+        "id": "v-1789523610527",
+        "title": "Mẫu SLIDE_2.1",
+        "youtubeId": "yP0WP4OFYeM",
+        "hot": false
+      },
+      {
+        "id": "v-1789523604703",
+        "title": "Mẫu SLIDE_15",
+        "youtubeId": "HEmO8izlT5Q",
+        "hot": false
+      },
+      {
+        "id": "v-1789523599232",
+        "title": "Mẫu SLIDE_03",
+        "youtubeId": "QBKeZ61zJE0",
+        "hot": false
+      },
+      {
+        "id": "v-1789523592207",
+        "title": "Demo Video",
+        "youtubeId": "O0yRfQGmRdw",
+        "hot": false
+      },
+      {
+        "id": "v-1789523583240",
+        "title": "Mẫu SLIDE_13",
+        "youtubeId": "_t0xjkPnuZU",
+        "hot": false
+      },
+      {
+        "id": "v-1789523568819",
+        "title": "Mẫu SLIDE_01",
+        "youtubeId": "VecLi4Vavzk",
+        "hot": false
+      },
+      {
+        "id": "v-1789523556586",
+        "title": "Mẫu SLIDE_08",
+        "youtubeId": "XYTqo-yj11k",
+        "hot": false
+      },
+      {
+        "id": "v-1789523548890",
+        "title": "Mẫu SLIDE_04",
+        "youtubeId": "t0-S8ziuQ4k",
+        "hot": false
+      },
+      {
+        "id": "v-1789523496414",
+        "title": "Mẫu SLIDE_14",
+        "youtubeId": "L6e7pnCuH3M",
+        "hot": false
+      },
+      {
         "id": "v-1789445716584",
         "title": "Mẫu SLIDE_02",
         "youtubeId": "LBeuWnTqt_M",
@@ -47,23 +131,52 @@
     "badge": "BÁN CHẠY",
     "videos": [
       {
-        "id": "v-2-1",
-        "title": "Demo 1: Video Loop Màn LED Hoa Hồng Bay 4K",
-        "youtubeId": "kffacxfA7G4",
-        "duration": "0:30 (Loop)",
-        "hot": true
+        "id": "v-1789527248088",
+        "title": "MẪU 3  LỤA",
+        "youtubeId": "Qompl8XJHzs",
+        "hot": false
       },
       {
-        "id": "v-2-2",
-        "title": "Demo 2: Màn LED Lễ Đường 3D Lãng Mạn 4K",
-        "youtubeId": "y6120QOlsfU",
-        "duration": "0:40"
+        "id": "v-1789527245042",
+        "title": "0 Led",
+        "youtubeId": "ibqt99c2jpA",
+        "hot": false
       },
       {
-        "id": "v-2-3",
-        "title": "Demo 3: Background Loop LED Sân Khấu Tiệc Cưới",
-        "youtubeId": "fJ9rUzIMcZQ",
-        "duration": "0:35"
+        "id": "v-1789527234800",
+        "title": "MẪU 7",
+        "youtubeId": "c7rVNEXpm_U",
+        "hot": false
+      },
+      {
+        "id": "v-1789527225532",
+        "title": "MẪU 6",
+        "youtubeId": "ghJZakIbuoY",
+        "hot": false
+      },
+      {
+        "id": "v-1789527212930",
+        "title": "Demo Video",
+        "youtubeId": "opqkSWpLKVk",
+        "hot": false
+      },
+      {
+        "id": "v-1789527207202",
+        "title": "MẪU 2   KÈM LOGO",
+        "youtubeId": "RtxggmIhEiM",
+        "hot": false
+      },
+      {
+        "id": "v-1789527202081",
+        "title": "MẪU 4  Basic",
+        "youtubeId": "wldzxJF9tlg",
+        "hot": false
+      },
+      {
+        "id": "v-1789527195986",
+        "title": "MẪU 1   KÈM LOGO",
+        "youtubeId": "1uWiojFFySQ",
+        "hot": false
       }
     ]
   }
