@@ -5,9 +5,58 @@
     "badge": "HOT",
     "videos": [
       {
+        "id": "v-1789875947321",
+        "title": "SLIDE50",
+        "youtubeId": "vMtGVzTNMQA",
+        "hot": false
+      },
+      {
+        "id": "v-1789875937600",
+        "title": "SLIDE 45",
+        "youtubeId": "Vy1N2VBxG6k",
+        "hot": false
+      },
+      {
+        "id": "v-1789875888982",
+        "title": "MAU40",
+        "youtubeId": "iNjFTO2Xofw",
+        "hot": false
+      },
+      {
+        "id": "v-1789875867509",
+        "title": "MAU35",
+        "youtubeId": "xqdRt8VSKkw",
+        "hot": false
+      },
+      {
+        "id": "v-1789875858081",
+        "title": "Mẫu SLIDE_40",
+        "youtubeId": "mSUZL7cdDA4",
+        "hot": false
+      },
+      {
+        "id": "v-1789874934221",
+        "title": "Mẫu SLIDE_30",
+        "youtubeId": "5ZHFTAB98to",
+        "hot": true
+      },
+      {
+        "id": "v-1789445716584",
+        "title": "Mẫu SLIDE_02",
+        "youtubeId": "LBeuWnTqt_M",
+        "duration": "5:37",
+        "hot": true
+      },
+      {
         "id": "v-1789523671420",
         "title": "Mẫu SLIDE_20",
         "youtubeId": "pVHxhxg-SrA",
+        "hot": false
+      },
+      {
+        "id": "v-1789874920950",
+        "title": "Mẫu SLIDE_25",
+        "youtubeId": "uF5ZXUvPsYY",
         "hot": false
       },
       {
@@ -35,6 +84,12 @@
         "hot": false
       },
       {
+        "id": "v-1789523592207",
+        "title": "Demo Video",
+        "youtubeId": "O0yRfQGmRdw",
+        "hot": false
+      },
+      {
         "id": "v-1789523610527",
         "title": "Mẫu SLIDE_2.1",
         "youtubeId": "yP0WP4OFYeM",
@@ -50,12 +105,6 @@
         "id": "v-1789523599232",
         "title": "Mẫu SLIDE_03",
         "youtubeId": "QBKeZ61zJE0",
-        "hot": false
-      },
-      {
-        "id": "v-1789523592207",
-        "title": "Demo Video",
-        "youtubeId": "O0yRfQGmRdw",
         "hot": false
       },
       {
@@ -89,13 +138,6 @@
         "hot": false
       },
       {
-        "id": "v-1789445716584",
-        "title": "Mẫu SLIDE_02",
-        "youtubeId": "LBeuWnTqt_M",
-        "duration": "5:37",
-        "hot": true
-      },
-      {
         "id": "v-1789445770296",
         "title": "Mẫu SLIDE_12",
         "youtubeId": "oOPUXQ2PiUE",
@@ -103,24 +145,10 @@
         "hot": false
       },
       {
-        "id": "v-1789445744807",
-        "title": "Mẫu SLIDE_09",
-        "youtubeId": "RhTsj_s-GIA",
-        "duration": "5:02",
-        "hot": false
-      },
-      {
         "id": "v-1789445736336",
         "title": "Mẫu SLIDE_06",
         "youtubeId": "P7GWFhCppdM",
         "duration": "1:30",
-        "hot": false
-      },
-      {
-        "id": "v-1789445706857",
-        "title": "Mẫu SLIDE_05",
-        "youtubeId": "BbClsav_9G0",
-        "duration": "3:18",
         "hot": false
       }
     ]
